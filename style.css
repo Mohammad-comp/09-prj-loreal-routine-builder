@@ -1,255 +1,47 @@
-/* —— basic reset —— */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* —— body + fonts —— */
-body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
-  display: flex;
-  justify-content: center;
-}
-
-.page-wrapper {
-  width: 90%;
-  max-width: 900px;
-}
-
-/* header */
-.site-header {
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 10px;
-}
-
-.logo {
-  width: 250px;
-  margin-bottom: 15px;
-}
-
-.site-title {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-/* category filter */
-.search-section {
-  margin: 30px 0;
-  display: flex;
-}
-
-.search-section select {
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  border: 2px solid #000;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: white;
-  font-weight: 500;
-}
-
-.search-section select:focus {
-  outline: none;
-  border-color: #666;
-}
-
-/* chat section */
-.chatbox {
-  margin: 40px 0;
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 26px;
-}
-
-.chatbox h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.chat-window {
-  padding: 20px;
-  font-size: 18px;
-  line-height: 1.5;
-  height: 250px;
-  overflow-y: auto;
-  background: #fafafa;
-  margin-bottom: 20px;
-}
-
-/* placeholder message */
-.placeholder-message {
-  width: 100%;
-  text-align: center;
-  padding: 40px;
-  color: #666;
-  font-size: 18px;
-}
-
-/* input row */
-.chat-form {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.chat-form input {
-  flex: 1;
-  padding: 12px;
-  font-size: 18px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  background: transparent;
-}
-
-.chat-form input:focus {
-  outline: none;
-  border-bottom-color: #000;
-}
-
-.chat-form button {
-  font-size: 18px;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.chat-form button:hover {
-  background: #666666;
-}
-
-.chat-form button:focus {
-  outline: 2px solid #000;
-  outline-offset: 2px;
-}
-
-/* visually hidden */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* footer */
-.site-footer {
-  margin: 60px 0 40px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-}
-
-.site-footer nav {
-  margin-top: 12px;
-}
-
-.site-footer a {
-  margin: 0 8px;
-  color: #000;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  color: #666666;
-}
-
-/* products grid */
-.products-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 30px 0;
-}
-
-.product-card {
-  flex: 0 1 calc(33.333% - 14px);
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 4px;
-  display: flex;
-  gap: 15px;
-  min-height: 160px;
-}
-
-.product-card img {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.product-card .product-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 110px;
-}
-
-.product-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.product-card p {
-  font-size: 14px;
-  color: #666;
-}
-
-/* selected products */
-.selected-products {
-  margin: 40px 0;
-  padding: 20px;
-  border: 2px solid #000;
-  border-radius: 8px;
-}
-
-.selected-products h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-#selectedProductsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.generate-btn {
-  width: 100%;
-  margin-top: 20px;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff;
-  background: #000;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.generate-btn:hover {
-  background: #666;
-}
-
-.generate-btn i {
-  margin-right: 8px;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap');
+:root { color: #251b1b; background: #faf6f0; font-family: 'DM Sans', system-ui, sans-serif; --red: #ff003b; --gold: #e3a535; --line: #e5d9cf; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.masthead { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem max(5vw, 1rem); background: #241618; color: white; border-block-end: 3px solid var(--gold); }
+.wordmark { direction: ltr; display: grid; text-align: center; letter-spacing: .08em; font-size: 1.35rem; }
+.wordmark small { font-size: .55rem; letter-spacing: .25em; }
+.masthead button { color: white; background: transparent; border-color: #a29190; }
+main { max-width: 1440px; margin-inline: auto; padding: 0 max(5vw, 1rem) 3rem; }
+.intro { padding-block: 2.5rem 2rem; border-block-end: 1px solid var(--line); margin-block-end: 2rem; }
+h1, h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; margin: 0; line-height: 1; }
+h1 { font-size: clamp(3.5rem, 8vw, 7rem); color: #411d2a; }
+h2 { font-size: 2rem; }
+p { line-height: 1.55; }
+.workspace { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(1rem, 3vw, 3rem); align-items: start; }
+.filters, .chat-controls, .section-heading { display: flex; gap: .75rem; align-items: center; }
+.filters { margin-block-start: 1rem; align-items: end; flex-wrap: wrap; }
+.filters label:first-child, .chat-controls input { flex: 1; }
+label { font-size: .88rem; font-weight: 700; display: block; }
+input, select, button { font: inherit; color: inherit; border: 1px solid var(--line); border-radius: .55rem; padding: .6rem .75rem; background: white; min-height: 2.75rem; }
+input, select { display: block; width: 100%; min-width: 0; margin-block-start: .25rem; }
+button { cursor: pointer; font-weight: 700; }
+button:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 3px solid #a50032; outline-offset: 3px; }
+.masthead :focus-visible { outline-color: var(--gold); }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 175px), 1fr)); gap: .85rem; }
+.product-card, .panel { border: 1px solid var(--line); border-radius: .85rem; background: white; padding: 1rem; min-width: 0; }
+.product-card:has([aria-pressed='true']) { outline: 2px solid var(--red); outline-offset: -2px; }
+.product-toggle { display: grid; align-content: start; justify-items: start; gap: .45rem; text-align: start; width: 100%; border: 0; padding: 0; }
+.product-toggle img { width: 100%; height: 135px; object-fit: contain; background: #faf7f3; border-radius: .5rem; }
+.brand { color: #66534d; font-size: .8rem; }
+.pick { color: #a50032; font-size: .82rem; }
+summary { cursor: pointer; font-size: .88rem; }
+details { margin-block-start: .8rem; font-size: .88rem; }
+.panel + .panel { margin-block-start: 1rem; }
+.section-heading { justify-content: space-between; }
+.quiet { border: 0; color: #a50032; }
+.primary { width: 100%; background: var(--red); border-color: var(--red); color: #20000a; }
+#selectedProductsList { list-style: none; padding: 0; }
+#selectedProductsList li { display: flex; align-items: center; justify-content: space-between; gap: .5rem; border-block-start: 1px solid var(--line); padding-block: .45rem; }
+#chatWindow { margin-block: .75rem; max-height: 26rem; overflow: auto; overflow-wrap: anywhere; }
+.message { padding: .7rem; border-radius: .65rem; background: #faf2e7; }
+.message.user { background: #fce6ec; }
+.message p { margin-block: .3rem 0; white-space: pre-wrap; }
+.message a { color: #8c0032; }
+#chatStatus { font-size: .88rem; color: #7d0031; }
+@media (max-width: 780px) { .workspace { grid-template-columns: 1fr; } }
