@@ -8,6 +8,6 @@ Serve the repository over HTTP (for example, `python3 -m http.server 8000`) or o
 
 ## Cloudflare Worker and live web search
 
-The frontend currently uses the existing beauty advisor Worker. It serves routine generation and follow-up chat with GPT-4.1. The web-search implementation in `worker/index.mjs` is ready to deploy separately so the previous project can keep its existing Worker. It uses the OpenAI Responses API with `web_search` and returns clickable citation annotations in the same response envelope the frontend expects.
+The published site uses the existing Cloudflare beauty advisor’s /routine route. This route uses the OpenAI Responses API with the web_search tool and returns clickable citation annotations. Other routes continue to serve the earlier chatbot.
 
-Deploy the module Worker through Cloudflare with an `OPENAI_API_KEY` secret and an `ALLOWED_ORIGINS` variable containing the Pages origin (`https://mohammad-comp.github.io`). You can set `OPENAI_MODEL` to another web-search-enabled Responses model. Apply rate limiting at Cloudflare for a publicly available, metered endpoint. Replace `workerUrl` in `script.js` with the deployed URL, then check that a current product question returns clickable citations. Until this deployment is connected, the published site uses the existing advisor without live search.
+The worker/index.mjs file contains the handler as a standalone Cloudflare module. To run it separately, bind OPENAI_API_KEY as a Worker secret and set ALLOWED_ORIGINS to your Pages origin. You can set OPENAI_MODEL to another Responses model that supports web search. Point workerUrl in script.js to the deployed endpoint. Ask for a current product page to check that citations are clickable.
