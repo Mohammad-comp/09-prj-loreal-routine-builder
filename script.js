@@ -1,5 +1,5 @@
 // Set this to the deployed Cloudflare Worker URL. The API key lives on the Worker.
-const workerUrl = '';
+const workerUrl = 'https://loreal-beauty-advisor.mohammadabdullah2.workers.dev/';
 const byId = id => document.getElementById(id);
 const search = byId('search');
 const category = byId('categoryFilter');
